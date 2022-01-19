@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { getMonster } from '../actions';
-import { immunities, resistances, vulnerabilities } from './MonsterDetails';
+import { getDamageInfo } from './MonsterDetails';
 
 const StyledDiv = styled.div`
     box-sizing: border-box;
@@ -87,9 +87,9 @@ const Monster = ({ monster, dispatch }) => {
                     <p>HD: {monster.hit_dice}</p>
                 </span>
                 <span className='defense block'>
-                    <p>Immunities: {immunities(monster)}</p>
-                    <p>Resistances: {resistances(monster)}</p>
-                    <p>Vulnerabilities: {vulnerabilities(monster)}</p>
+                    <p>Immunities: {getDamageInfo(monster, 'damage_immunities')}</p>
+                    <p>Resistances: {getDamageInfo(monster, 'damage_immunities')}</p>
+                    <p>Vulnerabilities: {getDamageInfo(monster, 'damage_immunities')}</p>
                 </span>
                 <span className='actions block'>
                     <p></p>
