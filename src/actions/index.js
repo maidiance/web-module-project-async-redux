@@ -12,9 +12,14 @@ export const getMonster = () => (dispatch) => {
         })
         .catch(err => {
             console.error(err);
+            dispatch(fetchFail(err));
         })
 }
 
 export const fetchSuccess = (monster) => {
     return({type: FETCH_SUCCESS, payload: monster})
+}
+
+export const fetchFail = (error) => {
+    return({type: FETCH_FAIL, payload: error})
 }
