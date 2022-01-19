@@ -1,11 +1,11 @@
 
 const initialState = {
-    coffee: []
+    coffee: {}
 };
 
-export const coffeeReducer = (state = initialState, action => {
+export const coffeeReducer = (state = initialState, action) => {
     switch (action.type) {
         default:
             return state;
     }
-})
+}
