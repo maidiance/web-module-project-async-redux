@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-export const getCoffee = () => (dispatch) => {
+export const getMonster = () => (dispatch) => {
     // dispatch()
-    axios.get('https://coffee.alexflipnote.dev/random')
+    axios.get('https://www.dnd5eapi.co/api/monsters/aboleth')
         .then(resp => {
-            console.log(resp);
+            console.log(resp.data);
         })
         .catch(err => {
             console.error(err);

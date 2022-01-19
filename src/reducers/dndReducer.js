@@ -1,9 +1,9 @@
 
 const initialState = {
-    coffee: {}
+    monster: {}
 };
 
-export const coffeeReducer = (state = initialState, action) => {
+export const monsterReducer = (state = initialState, action) => {
     switch (action.type) {
         default:
             return state;

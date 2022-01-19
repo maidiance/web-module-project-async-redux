@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { coffeeReducer as coffee } from './coffeeReducer';
+import { monsterReducer as mob } from './dndReducer';
 
 export default combineReducers({
-    coffee,
+    mob,
 });

@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Coffee from './components/Coffee';
+import Monster from './components/Monster';
 
 function App() {
   return (
     <div className="App">
       Async Redux Project
-      <Coffee />
+      <Monster />
     </div>
   );
 }

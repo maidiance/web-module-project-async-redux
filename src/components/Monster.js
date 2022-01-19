@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getCoffee } from './../actions';
+import { getMonster } from '../actions';
 
 const Coffee = ({ dispatch }) => {
     useEffect(() => {
-        dispatch(getCoffee());
+        dispatch(getMonster());
     }, []);
     return (
         <div className='container'>
-            <h2>Coffee Title</h2>
+            <h2>Monster Title</h2>
             {/* <img src={} alt={}/> */}
         </div>
     )
@@ -16,7 +16,7 @@ const Coffee = ({ dispatch }) => {
 
 const mapStateToProps = state => {
     return {
-        coffee: state.coffee,
+        monster: state.monster,
     }
 }
 export default connect(mapStateToProps)(Coffee);
