@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { getMonster } from '../actions';
+import { immunities, resistances, vulnerabilities } from './MonsterDetails';
 
 const StyledDiv = styled.div`
     box-sizing: border-box;
@@ -22,15 +23,25 @@ const StyledDiv = styled.div`
         color: #f8f4f2;
         width: 90%;
     }
+    .block {
+        margin: 0 auto;
+    }
     .info {
+        background-color: #e6dbd3;
         width: 90%;
         display: flex;
         justify-content: space-around;
     }
     .stats {
+
         width: 90%;
         display: flex;
         justify-content: space-around;
+    }
+    .stats p {
+        padding 0 2%;
+        border-style: solid;
+        border-color: #36271e;
     }
     .health {
         width: 90%;
@@ -76,9 +87,9 @@ const Monster = ({ monster, dispatch }) => {
                     <p>HD: {monster.hit_dice}</p>
                 </span>
                 <span className='defense block'>
-                    <p>Immunities: </p>
-                    <p>Resistances: </p>
-                    <p>Vulnerabilities: </p>
+                    <p>Immunities: {immunities(monster)}</p>
+                    <p>Resistances: {resistances(monster)}</p>
+                    <p>Vulnerabilities: {vulnerabilities(monster)}</p>
                 </span>
                 <span className='actions block'>
                     <p></p>
