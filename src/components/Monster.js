@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { getMonster } from '../actions';
-import { getDamageInfo } from './MonsterDetails';
+import { getDamageInfo, getActions } from './MonsterDetails';
 
 const StyledDiv = styled.div`
     box-sizing: border-box;
@@ -53,7 +53,12 @@ const StyledDiv = styled.div`
         margin-right: 2%;
     }
     .defense {
-        width: 90%;
+        width: 50%;
+        display: flex;
+        flex-flow: column wrap;
+    }
+    .actions {
+        width: 50%;
         display: flex;
         flex-flow: column wrap;
     }
@@ -92,7 +97,8 @@ const Monster = ({ monster, dispatch }) => {
                     <p>Vulnerabilities: {getDamageInfo(monster, 'damage_immunities')}</p>
                 </span>
                 <span className='actions block'>
-                    <p></p>
+                    <p>Actions:</p>
+                    {getActions(monster)}
                 </span>
             </div>
         </StyledDiv>
